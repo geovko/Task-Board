@@ -42,8 +42,8 @@
             </div>
             <br>
             <div class="form-floating">
-              <input class="form-control" type="text" id='date' placeholder="Task Title">
-              <label for="date">Task Due Date</label> 
+              <input class="form-control" type="text" id='dueDate' placeholder="Task Title">
+              <label for="dueDate">Task Due Date</label> 
             </div>
             <br>
             <div class="form-floating">
@@ -52,8 +52,7 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="submit" value="submit" class="btn btn-success">Add Task</button>
+            <button type="submit" value="submit" class="btn btn-success" id="add-task">Add Task</button>
           </div>
         </div>
       </div>
@@ -66,7 +65,7 @@
             <h2 class="card-title mb-1">To Do</h2>
           </div>
           <div class="card-body bg-light">
-            <div id="todo-cards"></div>
+            <div id="to-do-cards"></div>
           </div>
         </div>
       </div>
