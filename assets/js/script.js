@@ -49,6 +49,7 @@ function createTaskCard(task) {
     deleteBtn.text('Remove');
     bodyEl.append(deleteBtn);
 
+    // CARD COLOR
     if (task.dueDate && task.status !== 'done') {
         const now = dayjs();
         const taskDueDate = dayjs(task.dueDate, 'MM/DD/YYYY');
@@ -77,6 +78,7 @@ function renderTaskList() {
         taskList = [];
     }
 
+    // CREATE CARD
     for (i = 0; i < taskList.length; i++) {   
         if (taskList[i].status == 'done') {
             const newCard = createTaskCard(taskList[i]);
@@ -98,6 +100,7 @@ function renderTaskList() {
     }
     console.log('list, rendered');
 
+    // DRAGGABLE
     $('.draggable').draggable({
         opacity: 0.7,
         zIndex: 100,
@@ -140,8 +143,27 @@ function handleAddTask(event){
 // Todo: create a function to handle deleting a task
 function handleDeleteTask(event){
     // DELETE TASK
+    const deletedCard = event.target.parentNode.parentNode;
+    console.log(deletedCard);
     
-    console.log('deleted');
+    for (i = 0; i < taskList.length; i++) {
+        if (taskList[i].taskId == deletedCard.id) {
+            taskList.splice([i], 1);
+        }
+    }
+
+    for (i = 0; i < nextId.length; i++) {
+        if (nextId[i] == deletedCard.id) {
+            nextId.splice([i], 1);
+        }
+    }
+
+    deletedCard.remove();  
+    localStorage.setItem("tasks", JSON.stringify(taskList));
+    localStorage.setItem("nextId", JSON.stringify(nextId));
+    document.location.reload();
+
+    return taskList;
 }
 
 // Todo: create a function to handle dropping a task into a new status lane
@@ -166,10 +188,6 @@ function handleDrop(event, ui) {
 // Todo: when the page loads, render the task list, add event listeners, make lanes droppable, and make the due date field a date picker
 $(document).ready(function () {
     // RENDER LIST
-
-    //const refresh = [];
-    //localStorage.setItem('tasks', JSON.stringify(refresh));
-    //localStorage.setItem('nextId', JSON.stringify(refresh));
     renderTaskList();
 
     // EVENT LISTENERS
@@ -177,15 +195,16 @@ $(document).ready(function () {
         handleAddTask();
     });
 
-    $('.deleteBtn').on('click', function () {
-        handleDeleteTask();
+    $('.deleteBtn').on('click', function (event) {
+        handleDeleteTask(event);
     });
 
+    // DROPPABLE
     $(".droppable").droppable({
         accept: '.draggable',
         drop: handleDrop,
     });
 
-    // DROPPABLE??   
+    // DATEPICKER   
     $('#dueDate').datepicker();
 });
