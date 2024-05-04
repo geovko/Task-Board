@@ -6,7 +6,7 @@ This webpage is designed to give the user a task board where they can add indivi
 
 ## Usage
 
-To open the Personal Blog, click this link here to go directly!
+To open the Task Board, click this link here to go directly!
 
 [Task Board Webpage](https://geovko.github.io/Task-Board/)
 
