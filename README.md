@@ -19,7 +19,7 @@ The task board will have an 'Add Task' button (green button) as well as three co
 
 ![Main task board webpage without any inputs](assets/images/task-board.empty.png)
 
-Clicking the 'Add Task' button will open a modal which will the user to input 'Task Title', 'Task Due Date', and 'Task Description'.
+Clicking the 'Add Task' button will open a modal which will allow the user to input 'Task Title', 'Task Due Date', and 'Task Description'.
 
 ![Main task board webpage without any inputs](assets/images/task-board.add.png)
 
