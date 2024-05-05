@@ -23,7 +23,7 @@ Clicking the 'Add Task' button will open a modal which will allow the user to in
 
 ![Main task board webpage without any inputs](assets/images/task-board.add.png)
 
-Once the 'Add Task' button on the modal is clicked, a task card will be formed in the 'To Do' column. Below, there are three different tasks included in the 'To-Do' column. Each color reflects the task due date with respect to the current date. Red indicates the due date has already passed. Yellow indicates the due date is the same as the current date. White indicates the due date has not passed yet.
+Once the 'Add Task' button on the modal is clicked, a task card will be formed in the 'To Do' column. (If any of the inputs are left blank, the user will be alerted to fill in that particular input.) Below, there are three different tasks included in the 'To-Do' column. Each color reflects the task due date with respect to the current date. Red indicates the due date has already passed. Yellow indicates the due date is the same as the current date. White indicates the due date has not passed yet.
 
 ![Main task board webpage without any inputs](assets/images/task-board.tasks.png)
 
